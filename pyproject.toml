@@ -3,7 +3,8 @@ name = "deep-research-anything"
 version = "0.1.0"
 description = ""
 authors = [
-    {name = "Your Name",email = "you@example.com"}
+    { name = "Hao Sun", email = "author@example.com" },
+    { name = "Hui Cai", email = "huicaikrz8@gmail.com" }
 ]
 packages = [{include = "*", from = "deep_research_anything"}]
 readme = "README.md"
