@@ -31,6 +31,15 @@ O3MiniModelForEssay = {
     "temperature": 1,
 }
 
+openrouter_api_key = os.getenv("OPENROUTER_API_KEY")
+openrouter_api_base = os.getenv("OPENROUTER_ENDPOINT", "https://openrouter.ai/api/v1")
+Claude37Sonnet = {
+    "model": "openrouter/anthropic/claude-3.7-sonnet:beta",
+    "api_key": openrouter_api_key,
+    "api_base": openrouter_api_base,
+    "max_tokens": 32768,
+    "temperature": 1,
+}
 
 def fix_json_string(json_str):
     """
@@ -211,10 +220,9 @@ if __name__ == "__main__":
 
     print(
         asyncio.run(
-            generate_dict(
-                model=O3MiniModel,
-                prompt="Test prompt",
-                schema=TestSchema,
+            generate_text(
+                model=Claude37Sonnet,
+                prompt="what's machine learning?",
             )
         )
     )
